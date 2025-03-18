@@ -33,31 +33,36 @@ div {
   -o-animation-iteratin-count: infinite;
   */
 }
-
+/*
 @keyframes myanimation {
   0% {
     background-color: red;
-    
+    width: 5px;
+    height: 10px;
   }
 
   25% {
     background-color: yellow;
-  
+    width: 10px;
+    height: 10px;
   }
 
   50% {
     background-color: blue;
-   
+    width: 10px;
+    height: 5px;
   }
 
   75% {
     background-color: green;
-   
+    width: 10px;
+    height: 10px;
   }
 
   100% {
     background-color: red;
-   
+    width: 5px;
+    height: 10px;
   }
 }
 
@@ -72,3 +77,4 @@ div {
 @-o-keyframes myanimation {
   /* ... (same code as in the standard @keyframes) ... */
 }
+*/
