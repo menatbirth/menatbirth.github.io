@@ -2,27 +2,24 @@ html {
   height: 100%;
   width: 100%;
 }
-
-body {
+body{
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-p {
+p{
   text-decoration: none;
   color: whitesmoke;
 }
-
-a {
+a{
   text-decoration: none;
   color: greenyellow;
 }
-
-div {
+div
+{
   width: 10px;
   height: 10px;
-  background: skyblue;
-  animation: myanimation 5s;
+  background:skyblue;
+  animation:myanimation 5s;
   animation-iteration-count: infinite;
   /*
   -moz-animation:myanimation 5s;
@@ -32,4 +29,38 @@ div {
   -o-animation:myanimation 5s;
   -o-animation-iteratin-count: infinite;
   */
+}
+@keyframes myanimation
+{
+  0% {background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  75% {background-color: green;}
+  100% {background-color: red;}
+  
+}
+@-moz-keyframes myanimation
+{
+  0% {background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  75% {background-color: green;}
+  100% {background-color: red;}
+
+}
+@-webkit-keyframes myanimation
+{
+  0% {background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  75% {background-color: green;}
+  100% {background-color: red;}
+}
+@-o-keyframes myanimaton
+{
+  0% {background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  75% {background-color: green;}
+  100% {background-color: red;}
 }
