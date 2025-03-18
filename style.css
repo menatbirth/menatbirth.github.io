@@ -28,26 +28,85 @@
 }
 @-moz-keyframes myanimation
 {
-  0% {background-color: red;}
-  25% {background-color: yellow;}
-  50% {background-color: blue;}
-  75% {background-color: green;}
-  100% {background-color: red;}
-
+  0% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
+  25% {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+  }
+  50% {
+    background-color: blue;
+    width: 10px;
+    height: 5px;
+  }
+  75% {
+    background-color: green;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
 }
 @-webkit-keyframes myanimation
 {
-  0% {background-color: red;}
-  25% {background-color: yellow;}
-  50% {background-color: blue;}
-  75% {background-color: green;}
-  100% {background-color: red;}
+  0% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
+  25% {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+  }
+  50% {
+    background-color: blue;
+    width: 10px;
+    height: 5px;
+  }
+  75% {
+    background-color: green;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
 }
 @-o-keyframes myanimaton
 {
-  0% {background-color: red;}
-  25% {background-color: yellow;}
-  50% {background-color: blue;}
-  75% {background-color: green;}
-  100% {background-color: red;}
+  0% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
+  25% {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+  }
+  50% {
+    background-color: blue;
+    width: 10px;
+    height: 5px;
+  }
+  75% {
+    background-color: green;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    background-color: red;
+    width: 5px;
+    height: 10px;
+  }
 }
