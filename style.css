@@ -18,20 +18,25 @@ a {
   color: greenyellow;
 }
 
+
+.button1 {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 div {
   width: 10px;
   height: 10px;
   background: skyblue;
-  animation: myanimation 5s;
+  animation: myanimation 3s;
   animation-iteration-count: infinite;
-  /*
-  -moz-animation:myanimation 5s;
-  -moz-animation-iteratin-count: infinite;
-  -webkit-animation:myanimation 5s;
-  -webkit-animation-iteratin-count: infinite;
-  -o-animation:myanimation 5s;
-  -o-animation-iteratin-count: infinite;
-  */
 }
 
 @keyframes myanimation {
