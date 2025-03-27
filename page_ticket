@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ticket</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <hr></hr>
+   <big><p>落單編號</p></big>
+    <h1><p>4292</p></h1>
+   <hr></hr> <hr></hr>
+
+  <script src="script.js"></script>
+  <a href="/index.html" id="herf"><b>Back</b>&#128512;</a>
+
+
+  <div></div>
+</body>
+
+</html>
