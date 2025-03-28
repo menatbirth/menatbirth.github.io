@@ -18,6 +18,26 @@ a {
   color: greenyellow;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* 鼠标移动到选项上修改背景颜色 */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
 
 .button1 {
   background-color: #4CAF50;
