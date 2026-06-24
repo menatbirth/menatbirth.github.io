@@ -12,12 +12,12 @@
   <p>Hello !</p>
 
   <script src="script.js"></script>
-  <a href="/page_ticket.html" id="herf">let's start from <b>here</b>&#128512;</a>
+  <a href="/page_ticket" id="herf">let's start from <b>here</b>&#128512;</a>
   <ul>
-    <li><a href="/page_ticket.html">Ticket</a></li>
+    <li><a href="/page_ticket">Ticket</a></li>
     <li><a href="#news">News</a></li>
-    <li><a href="/page_photo.html">Photo</a></li>
-    <li><a href="/page_car.html">Car</a></li>
+    <li><a href="/page_photo">Photo</a></li>
+    <li><a href="/page_car">Car</a></li>
     <li><a href="#about">About</a></li>
   </ul>
 
