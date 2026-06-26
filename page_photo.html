@@ -1,81 +1,134 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>响应式平铺相册</title>
-    <style>
-        /* 基础样式重置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的时光相册</title>
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f5f5f7;
-            padding: 40px 20px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #333;
-            font-weight: 600;
-        }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f5f5f7;
+      padding: 40px 20px;
+    }
 
-        /* 相册平铺核心网格布局 */
-        .album-grid {
-            display: grid;
-            /* auto-fill 自动填充：每张图片最小 250px，最大平分剩余空间 */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px; /* 图片之间的间距 */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+      font-weight: 600;
+    }
 
-        /* 单个相片卡片容器 */
-        .album-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            background-color: #fff;
-            /* 固定照片比例为 4:3，防止因图片原图尺寸不一导致错位 */
-            aspect-ratio: 4 / 3; 
-        }
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        /* 图片自身样式 */
-        .album-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 核心：裁剪并填充，保证图片不变形 */
-            transition: transform 0.4s ease;
-            display: block;
-        }
+    .album-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background-color: #fff;
+      aspect-ratio: 4 / 3;
+      display: block;
+    }
 
-        /* 鼠标悬停时的放大动效 */
-        .album-item:hover img {
-            transform: scale(1.06); /* 轻轻放大 6% */
-            cursor: pointer;
-        }
-    </style>
+    .album-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .album-item:hover img {
+      transform: scale(1.06);
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
 
-    <h1>我的时光相册</h1>
+  <h1>我的时光相册</h1>
 
-    <div class="album-grid">
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/000000720001.jpg?w=600&auto=format&fit=crop" alt="相片1"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/20211219_171533.JPG?w=600&auto=format&fit=crop" alt="相片2"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/20220109_125449(2).JPG?w=600&auto=format&fit=crop" alt="相片3"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/20220109_150338(2).JPG?w=600&auto=format&fit=crop" alt="相片4"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/000000720001.jpg?w=600&auto=format&fit=crop" alt="相片5"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/000000720001.jpg?w=600&auto=format&fit=crop" alt="相片6"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/000000720001.jpg?w=600&auto=format&fit=crop" alt="相片7"></div>
-        <div class="album-item"><img src="https://img.peakpark.cn/photo/000000720001.jpg?w=600&auto=format&fit=crop" alt="相片8"></div>
-    </div>
+  <div class="album-grid">
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/000000720001.jpg" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/000000720001.jpg"
+        alt="相片1"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/20211219_171533.JPG" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/20211219_171533.JPG"
+        alt="相片2"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/20220109_125449(2).JPG" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/20220109_125449(2).JPG"
+        alt="相片3"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/20220109_150338(2).JPG" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/20220109_150338(2).JPG"
+        alt="相片4"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/000000720001.jpg" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/000000720001.jpg"
+        alt="相片5"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/000000720001.jpg" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/000000720001.jpg"
+        alt="相片6"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/000000720001.jpg" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/000000720001.jpg"
+        alt="相片7"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+    <a class="album-item" href="https://img.peakpark.cn/photo/000000720001.jpg" target="_blank">
+      <img
+        src="https://www.peakpark.cn/cdn-cgi/image/width=600,quality=75,format=auto,fit=cover/https://img.peakpark.cn/photo/000000720001.jpg"
+        alt="相片8"
+        loading="lazy"
+        decoding="async">
+    </a>
+
+  </div>
 
 </body>
 </html>
