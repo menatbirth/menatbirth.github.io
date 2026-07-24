@@ -9,6 +9,7 @@ body {
 }
 
 
+
 * {
   margin: 0;
   padding: 0;
@@ -100,6 +101,15 @@ li a:hover {
 
 .photo-card:hover .photo-info {
   opacity: 1;
+}
+
+.ascii-logo {
+  font-family: "Courier New", monospace;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 20px 0;
+  color: #ffffff;
 }
 
 div {
