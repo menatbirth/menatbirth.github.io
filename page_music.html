@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Peakpark audio archive."
+    />
+    <title>Music / Peakpark</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="music.js" defer></script>
+  </head>
+
+  <body class="terminal-page music-page">
+    <main class="terminal-shell">
+      <section class="terminal" aria-label="Peakpark music terminal">
+        <header class="terminal-header">
+          <span>PEAKPARK AUDIO ARCHIVE</span>
+          <span>TTY-01 / MUSIC</span>
+        </header>
+
+        <div class="music-session">
+          <pre class="ascii-logo music-logo" aria-label="Peakpark">
+ _____ _____ _____ _____ _____ _____ _____ _____
+|  _  |   __|  _  |  |  |  _  |  _  | __  |  |
+|   __|   __|     |    -|   __|     |    -|    -|
+|__|  |_____|__|__|__|__|__|  |__|__|__|__|__|__|</pre
+          >
+
+          <p class="station-label">AUDIO ARCHIVE / RECORD 001</p>
+
+          <section class="track" aria-labelledby="track-title">
+            <p class="track-index">NOW LOADED:</p>
+            <h1 id="track-title">I FEEL IT COMING</h1>
+            <p class="track-artist">THE WEEKND / DAFT PUNK</p>
+
+            <div class="transport">
+              <button class="play-button" type="button" aria-label="Play">
+                [ PLAY ]
+              </button>
+              <span class="time-display" aria-live="off">
+                00:00 / --:--
+              </span>
+            </div>
+
+            <label class="progress-label" for="track-progress">
+              POSITION
+            </label>
+            <input
+              id="track-progress"
+              class="track-progress"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+              aria-label="Track position"
+            />
+
+            <p class="player-status" aria-live="polite">READY</p>
+          </section>
+
+          <nav class="music-nav" aria-label="Music navigation">
+            <a href="/index.html">&lt; RETURN TO DIRECTORY</a>
+          </nav>
+        </div>
+
+        <p class="key-hint">SPACE PLAY / PAUSE&nbsp;&nbsp; ← → SEEK</p>
+      </section>
+
+      <pre class="ascii-mountain" aria-hidden="true">
+                         /\
+            /\          /  \       /\
+       ____/  \____    /    \_____/  \__
+ _____/            \__/                \_____
+------------------------------------------------</pre
+      >
+
+      <audio
+        class="native-audio"
+        preload="metadata"
+        src="he_Weeknd,Daft_Punk_-_I_Feel_It_Coming%5B1%5D.mp3"
+      ></audio>
+    </main>
+  </body>
+</html>
