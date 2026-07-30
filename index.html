@@ -1,35 +1,67 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Peakpark — a remote observation station for tickets, photographs and cars."
+    />
+    <title>Peakpark</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>ticket</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+  <body class="terminal-page">
+    <main class="terminal-shell">
+      <section class="terminal" aria-label="Peakpark terminal">
+        <header class="terminal-header">
+          <span>PEAKPARK REMOTE ACCESS</span>
+          <span>TTY-01</span>
+        </header>
 
-<body>
-  <pre class="ascii-logo">
-   _____ _____ _____ _____ _____ _____ _____ _____ 
-  |  _  |   __|  _  |  |  |  _  |  _  | __  |  |  |
-  |   __|   __|     |    -|   __|     |    -|    -|
-  |__|  |_____|__|__|__|__|__|  |__|__|__|__|__|__|
-  </pre>
-  <p>Hello !</p>
+        <div class="session">
+          <pre class="ascii-logo" aria-label="Peakpark">
+ _____ _____ _____ _____ _____ _____ _____ _____
+|  _  |   __|  _  |  |  |  _  |  _  | __  |  |
+|   __|   __|     |    -|   __|     |    -|    -|
+|__|  |_____|__|__|__|__|__|  |__|__|__|__|__|__|</pre
+          >
 
-  <script src="script.js"></script>
-  <a href="/page_ticket" id="herf">let's start from <b>here</b>&#128512;</a>
-  <ul>
-    <li><a href="/page_ticket.html">Ticket</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="/page_photo.html">Photo</a></li>
-    <li><a href="/page_car.html">Car</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
+          <p class="station-label">REMOTE OBSERVATION STATION / PEAK 01</p>
 
-  <div></div>
-</body>
+          <p class="status" aria-live="polite">
+            <span class="status-line">CONNECTING</span>
+          </p>
 
+          <p class="prompt-label">SELECT DIRECTORY:</p>
 
+          <nav class="terminal-nav" aria-label="Main navigation">
+            <a class="is-active" href="/page_ticket.html">
+              <span class="prompt" aria-hidden="true">&gt;</span>TICKET
+            </a>
+            <a href="/page_photo.html">
+              <span class="prompt" aria-hidden="true">&nbsp;</span>PHOTO
+            </a>
+            <a href="/page_car.html">
+              <span class="prompt" aria-hidden="true">&nbsp;</span>CAR
+            </a>
+            <a href="#about">
+              <span class="prompt" aria-hidden="true">&nbsp;</span>ABOUT
+            </a>
+          </nav>
+        </div>
 
+        <p class="key-hint">↑ ↓ SELECT&nbsp;&nbsp; ENTER OPEN</p>
+      </section>
+
+      <pre class="ascii-mountain" aria-hidden="true">
+                         /\
+            /\          /  \       /\
+       ____/  \____    /    \_____/  \__
+ _____/            \__/                \_____
+------------------------------------------------</pre
+      >
+    </main>
+  </body>
 </html>
