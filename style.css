@@ -1,71 +1,220 @@
-html {
-  height: 100%;
-  width: 100%;
+:root {
+  --ink: #e9e8e2;
+  --muted: #858984;
+  --dim: #4f5551;
+  --black: #050706;
 }
-
-body {
-  background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
 }
 
 body {
   background: #000;
-  font-family: Arial, sans-serif;
-  padding: 12px;
-}
-
-p {
-  text-decoration: none;
-  color: whitesmoke;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: greenyellow;
+  color: inherit;
 }
 
-ul {
-  list-style-type: none;
+/* Homepage terminal */
+.terminal-page {
+  color: var(--ink);
+  font-family: "Cascadia Mono", "SFMono-Regular", "Roboto Mono", Consolas,
+    monospace;
+}
+
+.terminal-shell {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050605;
+}
+
+.terminal-shell::before {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.28;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+}
+
+.terminal-shell::after {
+  position: fixed;
+  z-index: 6;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(
+    ellipse at center,
+    transparent 52%,
+    rgba(0, 0, 0, 0.48) 100%
+  );
+}
+
+.terminal {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 100svh;
+  width: min(960px, 100%);
+  padding: clamp(20px, 4vw, 48px);
+  flex-direction: column;
+}
+
+.terminal-header {
+  display: flex;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(233, 232, 226, 0.22);
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.session {
+  width: min(760px, 100%);
+  margin-top: clamp(52px, 10vh, 96px);
+}
+
+.ascii-logo {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  overflow: hidden;
+  color: var(--ink);
+  font: inherit;
+  font-size: clamp(8px, 1.35vw, 15px);
+  line-height: 1.08;
+  white-space: pre;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.13);
 }
 
-li a {
-  display: block;
-  color: #ffffff;
-  padding: 0;
-  text-decoration: none;
+.station-label {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.06em;
 }
 
-/* 鼠标移动到选项上修改背景颜色 */
-li a:hover {
-  background-color: #555;
-  color: white;
+.status {
+  height: 18px;
+  margin: 26px 0 0;
+  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.1em;
 }
 
-
-.button1 {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+.status-line::after {
   display: inline-block;
-  font-size: 16px;
+  width: 1.4em;
+  content: "...";
+  animation: waiting 700ms steps(3, end) infinite;
+  overflow: hidden;
+  vertical-align: bottom;
 }
 
+.status-line--done {
+  color: var(--ink);
+}
 
+.status-line--done::after {
+  display: none;
+}
+
+.prompt-label {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0;
+}
+
+.prompt-label--ready {
+  opacity: 1;
+}
+
+.terminal-nav {
+  display: grid;
+  width: min(270px, 100%);
+  margin-top: 8px;
+  gap: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+}
+
+.terminal-nav--ready {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease-out,
+    transform 220ms ease-out;
+}
+
+.terminal-nav a {
+  display: grid;
+  min-height: 28px;
+  padding: 4px 10px 4px 0;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  color: #777c78;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.terminal-nav a:hover,
+.terminal-nav a:focus-visible,
+.terminal-nav a.is-active {
+  color: var(--ink);
+  outline: none;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+}
+
+.prompt {
+  animation: cursor 1.1s steps(1, end) infinite;
+}
+
+.key-hint {
+  margin: auto 0 0;
+  color: #5f6460;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.ascii-mountain {
+  position: absolute;
+  z-index: 1;
+  right: clamp(18px, 5vw, 72px);
+  bottom: clamp(28px, 5vh, 54px);
+  margin: 0;
+  color: rgba(233, 232, 226, 0.18);
+  font: inherit;
+  font-size: clamp(7px, 1.05vw, 13px);
+  line-height: 1.05;
+  white-space: pre;
+  pointer-events: none;
+}
+
+/* Existing photo wall */
 .masonry {
   columns: 4 240px;
   column-gap: 12px;
@@ -80,86 +229,81 @@ li a:hover {
 }
 
 .photo-card img {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 .photo-info {
   position: absolute;
   inset: 0;
+  display: flex;
+  padding: 16px;
   background: rgba(0, 0, 0, 0.65);
   color: #fff;
-  opacity: 0;
-  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 16px;
-  transition: opacity 0.25s ease;
   font-size: 14px;
+  justify-content: flex-end;
   line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .photo-card:hover .photo-info {
   opacity: 1;
 }
 
-.ascii-logo {
-  font-family: "Courier New", monospace;
-  white-space: pre;
-  font-size: 14px;
-  line-height: 1.1;
-  margin: 20px 0;
-  color: #ffffff;
+@keyframes waiting {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1.4em;
+  }
 }
 
-div {
-  width: 10px;
-  height: 10px;
-  background: skyblue;
-  animation: myanimation 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes myanimation {
-  0% {
-    background-color: red;
-    width: 5px;
-    height: 10px;
+@keyframes cursor {
+  0%,
+  54% {
+    opacity: 1;
   }
-
-  25% {
-    background-color: yellow;
-    width: 10px;
-    height: 10px;
-  }
-
-  50% {
-    background-color: blue;
-    width: 10px;
-    height: 5px;
-  }
-
-  75% {
-    background-color: green;
-    width: 10px;
-    height: 10px;
-  }
-
+  55%,
   100% {
-    background-color: red;
-    width: 5px;
-    height: 10px;
+    opacity: 0.35;
   }
 }
 
-@-moz-keyframes myanimation {
-  /* ... (same code as in the standard @keyframes) ... */
+@media (max-width: 700px) {
+  .terminal {
+    padding: 22px 20px 24px;
+  }
+
+  .session {
+    margin-top: 10vh;
+  }
+
+  .ascii-logo {
+    transform: scaleX(0.78);
+    transform-origin: left center;
+  }
+
+  .ascii-mountain {
+    right: -22vw;
+    bottom: 30px;
+    opacity: 0.72;
+  }
+
+  .key-hint {
+    display: none;
+  }
 }
 
-@-webkit-keyframes myanimation {
-  /* ... (same code as in the standard @keyframes) ... */
-}
-
-@-o-keyframes myanimation {
-  /* ... (same code as in the standard @keyframes) ... */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
