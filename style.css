@@ -252,6 +252,165 @@ a {
   opacity: 1;
 }
 
+/* Music terminal */
+.music-session {
+  width: min(760px, 100%);
+  margin-top: clamp(44px, 8vh, 76px);
+}
+
+.music-logo {
+  color: rgba(233, 232, 226, 0.72);
+}
+
+.track {
+  width: min(520px, 100%);
+  margin-top: 30px;
+}
+
+.track-index,
+.progress-label,
+.player-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+}
+
+.track h1 {
+  margin: 10px 0 0;
+  color: var(--ink);
+  font: inherit;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.track-artist {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.transport {
+  display: flex;
+  margin-top: 34px;
+  align-items: center;
+  gap: 24px;
+}
+
+.play-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.play-button:hover,
+.play-button:focus-visible,
+.music-nav a:hover,
+.music-nav a:focus-visible {
+  outline: none;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.time-display {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.progress-label {
+  display: block;
+  margin-top: 27px;
+}
+
+.track-progress {
+  --track-position: 0%;
+  width: 100%;
+  height: 20px;
+  margin: 3px 0 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.track-progress:focus {
+  outline: none;
+}
+
+.track-progress:focus-visible {
+  outline: 1px dashed rgba(233, 232, 226, 0.42);
+  outline-offset: 4px;
+}
+
+.track-progress::-webkit-slider-runnable-track {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(233, 232, 226, 0.78) 0,
+    rgba(233, 232, 226, 0.78) var(--track-position),
+    rgba(233, 232, 226, 0.2) var(--track-position),
+    rgba(233, 232, 226, 0.2) 100%
+  );
+}
+
+.track-progress::-webkit-slider-thumb {
+  width: 7px;
+  height: 11px;
+  margin-top: -5px;
+  border: 0;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.track-progress::-moz-range-track {
+  height: 1px;
+  background: rgba(233, 232, 226, 0.2);
+}
+
+.track-progress::-moz-range-progress {
+  height: 1px;
+  background: rgba(233, 232, 226, 0.78);
+}
+
+.track-progress::-moz-range-thumb {
+  width: 7px;
+  height: 11px;
+  border: 0;
+  border-radius: 0;
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.player-status {
+  margin-top: 9px;
+}
+
+.music-nav {
+  margin-top: 32px;
+}
+
+.music-nav a {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.native-audio {
+  display: none;
+}
+
 @keyframes waiting {
   from {
     width: 0;
