@@ -17,6 +17,7 @@ function updatePlayer() {
   const position = duration ? audio.currentTime / duration : 0;
 
   progress.value = Math.round(position * 1000);
+  progress.style.setProperty("--track-position", `${position * 100}%`);
   timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(duration)}`;
   playButton.textContent = audio.paused ? "[ PLAY ]" : "[ PAUSE ]";
   playButton.setAttribute("aria-label", audio.paused ? "Play" : "Pause");
