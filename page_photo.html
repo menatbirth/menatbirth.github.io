@@ -1,37 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <title>photos</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-  <body>
-  <div class="masonry">
-    <div class="photo-card">
-      <img src="images/photo1.jpg" alt="">
-      <div class="photo-info">
-        <p>2026.06.26 18:30</p>
-        <p>Sony Xperia 1 III</p>
-        <p>上海</p>
-      </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photos / Peakpark</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="theme.js"></script>
+  </head>
+  <body class="content-page photo-page">
+    <div class="theme-keys theme-keys--floating" role="group" aria-label="Display theme">
+      <button class="theme-key" type="button" data-theme-choice="light" aria-pressed="false">LIGHT</button>
+      <button class="theme-key" type="button" data-theme-choice="dark" aria-pressed="true">DARK</button>
     </div>
-
-    <div class="photo-card">
-      <img src="images/photo2.jpg" alt="">
-      <div class="photo-info">
-        <p>2026.06.20 14:12</p>
-        <p>Canon EOS R6</p>
-        <p>杭州</p>
+    <main class="photo-shell">
+      <div class="masonry">
+        <div class="photo-card">
+          <img src="images/photo1.jpg" alt="" />
+          <div class="photo-info">
+            <p>2026.06.26 18:30</p>
+            <p>Sony Xperia 1 III</p>
+            <p>上海</p>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="images/photo2.jpg" alt="" />
+          <div class="photo-info">
+            <p>2026.06.20 14:12</p>
+            <p>Canon EOS R6</p>
+            <p>杭州</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</body>
+    </main>
+  </body>
 </html>

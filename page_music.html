@@ -9,6 +9,7 @@
     />
     <title>Music / Peakpark</title>
     <link href="style.css" rel="stylesheet" />
+    <script src="theme.js"></script>
     <script src="music.js" defer></script>
   </head>
 
@@ -17,7 +18,10 @@
       <section class="terminal" aria-label="Peakpark music terminal">
         <header class="terminal-header">
           <span>PEAKPARK AUDIO ARCHIVE</span>
-          <span>TTY-01 / MUSIC</span>
+          <div class="theme-keys" role="group" aria-label="Display theme">
+            <button class="theme-key" type="button" data-theme-choice="light" aria-pressed="false">LIGHT</button>
+            <button class="theme-key" type="button" data-theme-choice="dark" aria-pressed="true">DARK</button>
+          </div>
         </header>
 
         <div class="music-session">
@@ -79,7 +83,7 @@
       <audio
         class="native-audio"
         preload="metadata"
-        src="The_Weeknd,Daft_Punk_-_I_Feel_It_Coming[1].mp3"
+        src="he_Weeknd,Daft_Punk_-_I_Feel_It_Coming%5B1%5D.mp3"
       ></audio>
     </main>
   </body>

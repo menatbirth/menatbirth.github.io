@@ -9,6 +9,7 @@
     />
     <title>Peakpark</title>
     <link href="style.css" rel="stylesheet" />
+    <script src="theme.js"></script>
     <script src="script.js" defer></script>
   </head>
 
@@ -17,7 +18,10 @@
       <section class="terminal" aria-label="Peakpark terminal">
         <header class="terminal-header">
           <span>PEAKPARK REMOTE ACCESS</span>
-          <span>TTY-01</span>
+          <div class="theme-keys" role="group" aria-label="Display theme">
+            <button class="theme-key" type="button" data-theme-choice="light" aria-pressed="false">LIGHT</button>
+            <button class="theme-key" type="button" data-theme-choice="dark" aria-pressed="true">DARK</button>
+          </div>
         </header>
 
         <div class="session">
