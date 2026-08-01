@@ -99,34 +99,47 @@ a {
 
 .theme-keys {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+  align-items: center;
 }
 
 .theme-key {
-  min-width: 51px;
-  padding: 4px 7px;
-  border: 1px solid var(--dim);
+  min-width: auto;
+  padding: 3px 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
   border-radius: 0;
-  background: #101210;
+  appearance: none;
+  background: transparent;
   color: var(--muted);
-  box-shadow: 2px 2px 0 #000;
   cursor: pointer;
   font: inherit;
-  font-size: 10px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
 }
 
 .theme-key:hover,
 .theme-key:focus-visible {
   color: var(--ink);
-  outline: 1px dashed var(--ink);
-  outline-offset: 2px;
+  outline: 1px dashed currentColor;
+  outline-offset: 3px;
 }
 
 .theme-key.is-selected {
   color: var(--ink);
-  box-shadow: inset 2px 2px 0 #000;
-  transform: translate(1px, 1px);
+  border-bottom-color: var(--dim);
+}
+
+.theme-key.is-selected::before {
+  content: "[ ";
+}
+
+.theme-key.is-selected::after {
+  content: " ]";
+}
+
+.theme-key:active {
+  transform: translateY(1px);
 }
 
 .theme-keys--floating {
@@ -172,16 +185,12 @@ a {
 }
 
 :root[data-theme="light"] .theme-key {
-  border-color: #666a65;
-  background: #b9bbb5;
   color: #555954;
-  box-shadow: 2px 2px 0 #8c8f89;
 }
 
 :root[data-theme="light"] .theme-key.is-selected {
   color: #1f231f;
-  background: #afb2ab;
-  box-shadow: inset 2px 2px 0 #888b85;
+  border-bottom-color: #777a74;
 }
 
 :root[data-theme="light"] .terminal-header {
